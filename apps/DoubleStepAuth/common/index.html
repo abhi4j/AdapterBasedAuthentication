@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<!--  
+ Licensed Materials - Property of IBM
+ 5725-I43 (C) Copyright IBM Corp. 2006, 2013. All Rights Reserved.
+ US Government Users Restricted Rights - Use, duplication or 
+ disclosure restricted by GSA ADP Schedule Contract with IBM Corp.  
+ -->
+<html>
+    	<head>
+    		<meta charset="UTF-8">
+    		<title>index</title>
+    		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    		<link rel="shortcut icon" href="images/favicon.png">
+    		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    		<link rel="stylesheet" href="css/main.css">
+    		<script>window.$ = window.jQuery = WLJQ;</script>
+    	</head>
+    	<body style="display: none;">
+    		<div id="AppDiv">
+				<div class="header">
+					<h1>Double Step Adapter Based Authentication</h1>
+				</div>
+            	<input type="button" value="Get secret data" onclick="getSecretData()" />
+            	<input type="button" value="Logout" onclick="WL.Client.logout('DoubleStepAuthRealm', {onSuccess:WL.Client.reloadApp})" />
+            	<div id="ResponseDiv"></div>
+        	</div>
+        
+        	<div id="AuthDiv" style="display:none">        		
+        		<p id="AuthInfo"></p>
+        		
+        		<div id="AuthStep1Div">
+        			<h3>Authentication Step 1</h3>
+        			<input type="text" placeholder="Enter username" id="AuthUsername"/><br />
+        			<input type="password" placeholder="Enter password" id="AuthPassword"/><br />
+        			<input type="button" value="Submit" id="AuthStep1Submit" />
+        			<input type="button" value="Cancel" class="AuthCancelButton" />
+        		</div>
+        	
+        		<div id="AuthStep2Div">
+        			<h3>Authentication Step 2</h3>
+        			<p id="AuthQuestion"></p>
+        			<input type="text" placeholder="Enter answer" id="AuthAnswer"/><br />
+        			<input type="button" value="Submit" id="AuthStep2Submit" />
+        			<input type="button" value="Cancel" class="AuthCancelButton" />
+        		</div>
+        	</div>
+    		<script src="js/initOptions.js"></script>
+    		<script src="js/main.js"></script>
+    		<script src="js/DoubleStepAuthRealmChallengeProcessor.js"></script>
+    		<script src="js/messages.js"></script>
+    	</body>
+</html>
